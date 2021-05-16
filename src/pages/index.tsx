@@ -14,6 +14,8 @@ import { Main } from "../components/Main";
 import { DarkModeSwitch } from "../components/DarkModeSwitch";
 import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
+import React from "react";
+import MyModal from "../components/MyModal";
 
 const Index = () => (
   <Container height="100vh">
@@ -43,6 +45,7 @@ const Index = () => (
           </ChakraLink>
         </ListItem>
       </List>
+      <MyModal isOpen={true} onClose={() => {}} />
     </Main>
 
     <DarkModeSwitch />
