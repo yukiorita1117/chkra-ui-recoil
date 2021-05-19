@@ -16,6 +16,7 @@ import { CTA } from "../components/CTA";
 import { Footer } from "../components/Footer";
 import React from "react";
 import MyModal from "../components/MyModal";
+import SimpleDrawer from "../components/Drawer";
 
 const Index = () => (
   <Container height="100vh">
@@ -46,6 +47,7 @@ const Index = () => (
         </ListItem>
       </List>
       <MyModal isOpen={true} onClose={() => {}} />
+      <SimpleDrawer />
     </Main>
 
     <DarkModeSwitch />
