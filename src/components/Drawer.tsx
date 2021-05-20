@@ -15,7 +15,6 @@ type Props = {};
 
 const SimpleDrawer: React.FC<Props> = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = React.useRef();
 
   return (
     <>
