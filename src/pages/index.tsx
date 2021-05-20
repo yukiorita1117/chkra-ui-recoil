@@ -17,45 +17,59 @@ import { Footer } from "../components/Footer";
 import React from "react";
 import MyModal from "../components/MyModal";
 import SimpleDrawer from "../components/Drawer";
+import UserItem from "../components/UserItem";
 
-const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{" "}
-        <Code>typescript</Code>.
-      </Text>
+const Index = () => {
+  const user = [
+    {
+      name: "折田幸夫",
+      status: "一般",
+      image: "../constants/sample.jpeg",
+    },
+    {
+      name: "かわかみあきひろ",
+      status: "一般",
+      image: "../constants/sample.jpeg",
+    },
+  ];
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-      <MyModal isOpen={true} onClose={() => {}} />
-      <SimpleDrawer />
-    </Main>
+  return (
+    <Container height="100vh">
+      <Hero />
+      <Main>
+        <Text>
+          Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{" "}
+          <Code>typescript</Code>.
+        </Text>
 
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-);
+        <List spacing={3} my={0}>
+          <ListItem>
+            <ListIcon as={CheckCircleIcon} color="green.500" />
+            <ChakraLink isExternal href="#" flexGrow={1} mr={2}>
+              Chakra UI <LinkIcon />
+            </ChakraLink>
+          </ListItem>
+          <ListItem>
+            <ListIcon as={CheckCircleIcon} color="green.500" />
+            <ChakraLink isExternal href="#" flexGrow={1} mr={2}>
+              Next.js <LinkIcon />
+            </ChakraLink>
+          </ListItem>
+        </List>
+        <MyModal isOpen={true} onClose={() => {}} />
+        <SimpleDrawer />
+        {user.map((u) => (
+          <UserItem user={u} />
+        ))}
+      </Main>
+
+      <DarkModeSwitch />
+      <Footer>
+        <Text>Next ❤️ Chakra</Text>
+      </Footer>
+      <CTA />
+    </Container>
+  );
+};
 
 export default Index;
