@@ -31,6 +31,7 @@ const Index = () => {
       status: "一般",
       image: "../constants/sample.jpeg",
     },
+    { name: "テスト", status: "一般", image: "../constants/sample.jpeg" },
   ];
 
   return (
